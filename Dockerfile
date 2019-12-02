@@ -11,7 +11,7 @@ ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION=local
 ARG USERNAME=vscode
-ARG USER_UID=1001
+ARG USER_UID=1000
 ARG USER_GID=1000
 LABEL \
     org.opencontainers.image.authors="quentin.mcgaw@gmail.com" \
@@ -27,6 +27,7 @@ WORKDIR /home/${USERNAME}
 ENTRYPOINT [ "/bin/zsh" ]
 
 # Setup user
+RUN deluser "$(getent passwd $USER_UID | cut -d: -f1)"
 RUN adduser $USERNAME -s /bin/sh -D -u $USER_UID $USER_GID && \
     mkdir -p /etc/sudoers.d && \
     echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME && \
