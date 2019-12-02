@@ -68,6 +68,11 @@ RUN git clone --single-branch --depth 1 https://github.com/robbyrussell/oh-my-zs
     cp -r /home/${USERNAME}/.oh-my-zsh /root/.oh-my-zsh && \
     chown -R root:root /root/.oh-my-zsh
 
-# Install NPM packages
+# Sets directories for NPM global packages
+ENV NODE_PATH="/home/${USERNAME}/.npm-packages/lib/node_modules" \
+    MANPATH="/home/${USERNAME}/.npm-packages/share/man"
+RUN mkdir "/home/${USERNAME}/.npm-packages" && \
+    echo "prefix = /home/${USERNAME}/.npm-packages" >> /home/${USERNAME}/.npmrc && \
+    export PATH="/home/${USERNAME}/.npm-packages/bin:$PATH"
 
 USER ${USERNAME}
