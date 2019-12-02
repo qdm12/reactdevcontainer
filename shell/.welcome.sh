@@ -1,5 +1,7 @@
 echo "You have several React tools:"
-echo 
+echo " * create-react-app"
+echo " * mocha"
+echo " * react-native-cli"
 echo "You have several Docker tools alias you can use:"
 echo " * Inspect the layers of a Docker image: dive <image-name>"
 echo " * Run lazydocker in a container: ld"

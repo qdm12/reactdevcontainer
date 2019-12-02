@@ -9,3 +9,7 @@ The VS code React extension requires [several tools](TODO) to fully work.
 ## Terminal tools
 
 Extra Node tools are installed:
+
+- create-react-app
+- mocha
+- react-native-cli

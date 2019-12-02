@@ -23,7 +23,7 @@
     - Easily bind mount your SSH keys to use with **git**
     - Manage your host Docker from within the dev container, more details at [doc/docker.md](https://github.com/qdm12/reactdevcontainer/blob/master/doc/docker.md)
 - Runs without root by default but you can `sudo`
-- 'Minimal' size of **270MB**
+- 'Minimal' size of **294MB**
 - Extensible with docker-compose.yml
 
 ## Requirements
