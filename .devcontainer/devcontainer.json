@@ -7,7 +7,6 @@
     "postCreateCommand": "npm install",
     "workspaceFolder": "/workspace",
     // "overrideCommand": "",
-    // "appPort": 8000,
     "extensions": [
         "dbaeumer.vscode-eslint",
         "ms-vscode.vscode-typescript-tslint-plugin",
