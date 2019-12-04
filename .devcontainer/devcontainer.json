@@ -65,7 +65,7 @@
             {
               "autoFix": true,
               "language": "typescriptreact"
-        }
+            }
         ],
         "prettier.eslintIntegration": true
     }

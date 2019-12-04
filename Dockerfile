@@ -75,6 +75,6 @@ RUN mkdir "/home/${USERNAME}/.npm-packages" && \
     echo "prefix = /home/${USERNAME}/.npm-packages" >> /home/${USERNAME}/.npmrc && \
     export PATH="/home/${USERNAME}/.npm-packages/bin:$PATH"
 # Install some global NPM packages
-RUN npm install -g create-react-app mocha react-native-cli
+RUN npm install -g create-react-app mocha react-native-cli eslint tslint
 
 USER ${USERNAME}
