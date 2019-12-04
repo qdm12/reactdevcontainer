@@ -13,3 +13,5 @@ services:
     security_opt:
       - seccomp:unconfined
     entrypoint: zsh -c "while sleep 1000; do :; done"
+    ports:
+      - 3000:3000/tcp
