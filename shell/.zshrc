@@ -31,7 +31,7 @@ fi
 
 echo
 echo "Running as user `whoami`"
-# TODO echo "Node version `node version | cut -d' ' -f3`"
+echo "Node version `node version`"
 if [ ! -z $DOCKERSOCK_OK ]; then
   echo "Docker server `docker version --format {{.Server.Version}}` | client `docker version --format {{.Client.Version}}`"
   echo "Docker-Compose `docker-compose version --short`"
