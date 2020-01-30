@@ -1,0 +1,1 @@
+plugins=(vscode git colorize npm npx react-native docker docker-compose)

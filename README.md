@@ -10,21 +10,23 @@
 [![Image size](https://images.microbadger.com/badges/image/qmcgaw/reactdevcontainer.svg)](https://microbadger.com/images/qmcgaw/reactdevcontainer)
 [![Image version](https://images.microbadger.com/badges/version/qmcgaw/reactdevcontainer.svg)](https://microbadger.com/images/qmcgaw/reactdevcontainer)
 
-[![Join Slack channel](https://img.shields.io/badge/slack-@qdm12-yellow.svg?logo=slack)](https://join.slack.com/t/qdm12/shared_invite/enQtODMwMDQyMTAxMjY1LTU1YjE1MTVhNTBmNTViNzJiZmQwZWRmMDhhZjEyNjVhZGM4YmIxOTMxOTYzN2U0N2U2YjQ2MDk3YmYxN2NiNTc)
+[![Join Slack channel](https://img.shields.io/badge/slack-@qdm12-yellow.svg?logo=slack)](https://join.slack.com/t/qdm12/shared_invite/enQtOTE0NjcxNTM1ODc5LTYyZmVlOTM3MGI4ZWU0YmJkMjUxNmQ4ODQ2OTAwYzMxMTlhY2Q1MWQyOWUyNjc2ODliNjFjMDUxNWNmNzk5MDk)
 [![GitHub last commit](https://img.shields.io/github/last-commit/qdm12/reactdevcontainer.svg)](https://github.com/qdm12/reactdevcontainer/issues)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/qdm12/reactdevcontainer.svg)](https://github.com/qdm12/reactdevcontainer/issues)
 [![GitHub issues](https://img.shields.io/github/issues/qdm12/reactdevcontainer.svg)](https://github.com/qdm12/reactdevcontainer/issues)
 
 ## Features
 
-- Based on [Alpine 3.10 with the minimal packages](https://github.com/qdm12/reactdevcontainer/blob/master/doc/alpine.md) and a custom terminal
-- Node 13.2
+- Based on [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer):
+    - Alpine 3.11 with minimal custom terminal and packages
+    - Nodejs, npm and yarn downloaded as Alpine packages
+    - See more [features](https://github.com/qdm12/basedevcontainer#features)
+- Globally installed: `eslint`, `create-react-app`, `mocha`, `react-native-cli`
 - Cross platform
     - Easily bind mount your SSH keys to use with **git**
-    - Manage your host Docker from within the dev container, more details at [doc/docker.md](https://github.com/qdm12/reactdevcontainer/blob/master/doc/docker.md)
-- Runs without root by default but you can `sudo`
-- 'Minimal' size of **294MB**
+    - Manage your host Docker from within the dev container, more details at [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer#features)
 - Extensible with docker-compose.yml
+- 'Minimal' size of **288MB**
 
 ## Requirements
 
@@ -77,11 +79,43 @@
 
 ### Development image
 
-You can build and extend the Docker development image to suit your needs, more information is available at [doc/image.md](https://github.com/qdm12/reactdevcontainer/blob/master/doc/image.md)
+- You can build the development image yourself:
 
-### welcome.sh
+    ```sh
+    docker build -t qmcgaw/reactdevcontainer https://github.com/qdm12/reactdevcontainer.git
+    ```
 
-You can bind mount a shell script to `/home/vscode/.welcome.sh` to replace the [current welcome script](shell/welcome.sh) to suit your needs.
+- You can extend the Docker image `qmcgaw/reactdevcontainer` with your own instructions.
+
+    1. Create a file `.devcontainer/Dockerfile` with `FROM qmcgaw/reactdevcontainer`
+    1. Append instructions to the Dockerfile created. For example:
+        - Add more Go packages and add an alias
+
+            ```Dockerfile
+            FROM qmcgaw/reactdevcontainer
+            RUN npm install -g jest
+            RUN echo "alias ls='ls -al'" >> ~/.zshrc
+            ```
+
+        - Add some Alpine packages, you will need to switch to `root`:
+
+            ```Dockerfile
+            FROM qmcgaw/reactdevcontainer
+            USER root
+            apk add bind-tools
+            USER vscode
+            ```
+
+    1. Modify `.devcontainer/docker-compose.yml` and add `build: .` in the vscode service.
+    1. Open the VS code command palette and choose `Remote-Containers: Rebuild container`
+
+- You can bind mount a shell script to `/home/vscode/.welcome.sh` to replace the [current welcome script](shell/.welcome.sh)
+
+
+## TODOs
+
+- [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer) todos
+- Compatibility with `arm/v8` and `arm/v7`
 
 ## License
 

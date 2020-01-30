@@ -4,6 +4,7 @@ services:
   vscode:
     image: qmcgaw/reactdevcontainer
     volumes:
+      - node_modules:/workspace/node_modules
       - ../:/workspace
       - ~/.ssh:/home/vscode/.ssh:ro
       - ~/.ssh:/root/.ssh:ro
