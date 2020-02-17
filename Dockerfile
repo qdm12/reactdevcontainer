@@ -1,6 +1,4 @@
-ARG ALPINE_VERSION=3.11
-
-FROM qmcgaw/basedevcontainer
+FROM qmcgaw/basedevcontainer:alpine
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION=local
@@ -19,7 +17,7 @@ LABEL \
     org.opencontainers.image.description="ReactJS development container for Visual Studio Code Remote Containers development"
 USER root
 # Install Alpine packages
-RUN apk add -q --update --progress nodejs npm yarn
+RUN apk add -q --update --progress --no-cache nodejs npm yarn
 # Setup shells
 COPY --chown=${USER_UID}:${USER_GID} shell/.zshrc-specific shell/.welcome.sh /home/${USERNAME}/
 COPY shell/.zshrc-specific shell/.welcome.sh /root/

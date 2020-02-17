@@ -111,7 +111,6 @@
 
 - You can bind mount a shell script to `/home/vscode/.welcome.sh` to replace the [current welcome script](shell/.welcome.sh)
 
-
 ## TODOs
 
 - [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer) todos

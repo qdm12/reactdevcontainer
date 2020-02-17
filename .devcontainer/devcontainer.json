@@ -6,7 +6,6 @@
     "shutdownAction": "stopCompose",
     "postCreateCommand": "npm install",
     "workspaceFolder": "/workspace",
-    "appPort": 3000,
     // "overrideCommand": "",
     "extensions": [
         "msjsdiag.vscode-react-native",
@@ -36,6 +35,7 @@
         "remote.extensionKind": {
             "ms-azuretools.vscode-docker": "workspace"
         },
+        // Javascript
         "editor.codeActionsOnSave": {
             "source.fixAll.tslint": true
         },
