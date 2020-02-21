@@ -4,7 +4,7 @@
     "service": "vscode",
     "runServices": ["vscode"],
     "shutdownAction": "stopCompose",
-    "postCreateCommand": "npm install",
+    "postCreateCommand": "yarn install",
     "workspaceFolder": "/workspace",
     // "overrideCommand": "",
     "extensions": [
