@@ -28,7 +28,7 @@ RUN mkdir "/home/${USERNAME}/.npm-packages" && \
     echo "prefix = /home/${USERNAME}/.npm-packages" >> /home/${USERNAME}/.npmrc
 ENV PATH=/home/${USERNAME}/.npm-packages/bin:$PATH
 # Install some global NPM packages
-RUN npm install -g create-react-app mocha nodemon react-native-cli
+RUN npm install -g create-react-app mocha nodemon react-native-cli jest
 # Fix ownership and permissions of anonymous volume 'node_modules'
 VOLUME [ "/workspace/node_modules" ]
 RUN mkdir -p /workspace/node_modules && \
