@@ -24,8 +24,7 @@ COPY shell/.zshrc-specific shell/.welcome.sh /root/
 # Sets directories for NPM global packages
 ENV NODE_PATH="/home/${USERNAME}/.npm-packages/lib/node_modules" \
     MANPATH="/home/${USERNAME}/.npm-packages/share/man"
-RUN mkdir "/home/${USERNAME}/.npm-packages" && \
-    echo "prefix = /home/${USERNAME}/.npm-packages" >> /home/${USERNAME}/.npmrc
+RUN echo "prefix = /home/${USERNAME}/.npm-packages" >> /home/${USERNAME}/.npmrc
 ENV PATH=/home/${USERNAME}/.npm-packages/bin:$PATH
 # Install some global NPM packages
 RUN npm install -g create-react-app mocha nodemon react-native-cli jest
