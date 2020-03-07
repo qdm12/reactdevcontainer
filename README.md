@@ -2,7 +2,7 @@
 
 **Ultimate React development container for Visual Studio Code**
 
-[![reactdevcontainer](https://github.com/qdm12/reactdevcontainer/raw/master/title.png)](https://hub.docker.com/r/qmcgaw/reactdevcontainer)
+[![reactdevcontainer](https://github.com/qdm12/reactdevcontainer/raw/master/title.svg)](https://hub.docker.com/r/qmcgaw/reactdevcontainer)
 
 [![Build Status](https://travis-ci.org/qdm12/reactdevcontainer.svg?branch=master)](https://travis-ci.org/qdm12/reactdevcontainer)
 [![Docker Pulls](https://img.shields.io/docker/pulls/qmcgaw/reactdevcontainer.svg)](https://hub.docker.com/r/qmcgaw/reactdevcontainer)
