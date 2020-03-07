@@ -1,7 +1,6 @@
 .devcontainer
 .git
 .vscode
-doc
 .dockerignore
 .gitignore
 .travis.yml

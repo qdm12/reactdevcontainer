@@ -26,7 +26,7 @@
     - Easily bind mount your SSH keys to use with **git**
     - Manage your host Docker from within the dev container, more details at [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer#features)
 - Extensible with docker-compose.yml
-- 'Minimal' size of **288MB**
+- 'Minimal' size of **333MB**
 
 ## Requirements
 
