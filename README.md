@@ -21,7 +21,7 @@
     - Alpine 3.11 with minimal custom terminal and packages
     - Nodejs, npm and yarn downloaded as Alpine packages
     - See more [features](https://github.com/qdm12/basedevcontainer#features)
-- Globally installed: `nodemon`, `create-react-app`, `mocha`, `react-native-cli` and `jest`
+- Globally installed: `nodemon`, `create-react-app`, `mocha`, and `jest`
 - Cross platform
     - Easily bind mount your SSH keys to use with **git**
     - Manage your host Docker from within the dev container, more details at [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer#features)

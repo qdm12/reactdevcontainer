@@ -8,7 +8,6 @@
     "workspaceFolder": "/workspace",
     // "overrideCommand": "",
     "extensions": [
-        "msjsdiag.vscode-react-native",
         "jpoissonnier.vscode-styled-components",
         "dbaeumer.vscode-eslint",
         "ms-vscode.vscode-typescript-tslint-plugin",

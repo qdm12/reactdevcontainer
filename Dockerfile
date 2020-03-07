@@ -29,7 +29,7 @@ RUN echo "prefix = /home/${USERNAME}/.npm-packages" >> /home/${USERNAME}/.npmrc 
     chmod 600 /home/${USERNAME}/.npmrc
 ENV PATH=/home/${USERNAME}/.npm-packages/bin:$PATH
 # Install some global NPM packages
-RUN yarn global add -g create-react-app mocha nodemon react-native-cli jest
+RUN yarn global add -g create-react-app mocha nodemon jest
 # Fix ownership and permissions of anonymous volume 'node_modules'
 VOLUME [ "/workspace/node_modules" ]
 RUN mkdir -p /workspace/node_modules && \
