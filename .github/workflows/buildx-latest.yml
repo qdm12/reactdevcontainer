@@ -1,5 +1,7 @@
 name: Buildx latest
 on:
+  schedule:
+    - cron: '0 9 * * *'
   pull_request:
     branches: [master]
     paths-ignore:
