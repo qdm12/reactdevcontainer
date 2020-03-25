@@ -4,7 +4,7 @@
 
 [![reactdevcontainer](https://github.com/qdm12/reactdevcontainer/raw/master/title.svg)](https://hub.docker.com/r/qmcgaw/reactdevcontainer)
 
-[![Build Status](https://travis-ci.org/qdm12/reactdevcontainer.svg?branch=master)](https://travis-ci.org/qdm12/reactdevcontainer)
+[![Build status](https://github.com/qdm12/reactdevcontainer/workflows/Buildx%20latest/badge.svg)](https://github.com/qdm12/reactdevcontainer/actions?query=workflow%3A%22Buildx+latest%22)
 [![Docker Pulls](https://img.shields.io/docker/pulls/qmcgaw/reactdevcontainer.svg)](https://hub.docker.com/r/qmcgaw/reactdevcontainer)
 [![Docker Stars](https://img.shields.io/docker/stars/qmcgaw/reactdevcontainer.svg)](https://hub.docker.com/r/qmcgaw/reactdevcontainer)
 [![Image size](https://images.microbadger.com/badges/image/qmcgaw/reactdevcontainer.svg)](https://microbadger.com/images/qmcgaw/reactdevcontainer)
