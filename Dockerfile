@@ -18,6 +18,7 @@ LABEL \
 USER root
 # Install Alpine packages
 RUN apk add -q --update --progress --no-cache nodejs npm yarn
+RUN mkdir /var/cache/apk
 # Setup shells
 COPY --chown=${USER_UID}:${USER_GID} shell/.zshrc-specific shell/.welcome.sh /home/${USERNAME}/
 COPY shell/.zshrc-specific shell/.welcome.sh /root/
