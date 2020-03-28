@@ -1,11 +1,23 @@
 name: Misspells
-on: [pull_request,push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 jobs:
   misspell:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout on push
+        if: github.event_name == 'push'
         uses: actions/checkout@v2
+      - name: Checkout on pull_request
+        if: github.event_name == 'pull_request'
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
       - name: reviewdog fixer
         uses: reviewdog/action-misspell@v1
         with:
@@ -18,3 +30,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'Typos fixes'
           title: "Typos fixes"
+          branch: typos
+          branch-suffix: timestamp
