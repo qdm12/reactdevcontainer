@@ -4,7 +4,7 @@
     "service": "vscode",
     "runServices": ["vscode"],
     "shutdownAction": "stopCompose",
-    "postCreateCommand": "chmod -R 700 .git && yarn install",
+    "postCreateCommand": "yarn install",
     "workspaceFolder": "/workspace",
     // "overrideCommand": "",
     "extensions": [
@@ -40,6 +40,7 @@
         "quicktype.quicktype", // Paste JSON as code
         "spikespaz.vscode-smoothtype", // smooth cursor animation
         "vscode-icons-team.vscode-icons",
+        "github.vscode-pull-request-github"
     ],
     "settings": {
         // General settings

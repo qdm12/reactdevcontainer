@@ -8,7 +8,6 @@ on:
       - .github/workflows/greetings.yml
       - .github/workflows/labels.yml
       - .github/workflows/misspell.yml
-      - .github/workflows/security.yml
       - .dockerignore
       - .gitignore
       - docker-compose.yml
@@ -20,10 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - id: buildx
+      - name: Buildx setup
         uses: crazy-max/ghaction-docker-buildx@v1
-        with:
-          version: latest
       - name: Dockerhub login
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u qmcgaw --password-stdin 2>&1
       - name: Run Buildx
