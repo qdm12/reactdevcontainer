@@ -1,7 +1,3 @@
-echo "Terminal React tools:"
-echo " * create-react-app"
-echo " * mocha"
-echo " * jest"
 echo "Terminal Docker tools aliases:"
 echo " * alpine: launch an interactive alpine 3.11 container"
 echo " * dive: inspect the layers of a Docker image"
