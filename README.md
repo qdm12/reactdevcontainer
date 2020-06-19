@@ -91,7 +91,7 @@
 
     1. Create a file `.devcontainer/Dockerfile` with `FROM qmcgaw/reactdevcontainer`
     1. Append instructions to the Dockerfile created. For example:
-        - Add more Go packages and add an alias
+        - Add more Npm packages and add an alias
 
             ```Dockerfile
             FROM qmcgaw/reactdevcontainer

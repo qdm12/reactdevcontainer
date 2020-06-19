@@ -13,8 +13,8 @@ LABEL \
     org.opencontainers.image.url="https://github.com/qdm12/reactdevcontainer" \
     org.opencontainers.image.documentation="https://github.com/qdm12/reactdevcontainer" \
     org.opencontainers.image.source="https://github.com/qdm12/reactdevcontainer" \
-    org.opencontainers.image.title="React Dev container" \
-    org.opencontainers.image.description="ReactJS development container for Visual Studio Code Remote Containers development"
+    org.opencontainers.image.title="React Dev container Alpine" \
+    org.opencontainers.image.description="React TS development container for Visual Studio Code Remote Containers development"
 USER root
 # Install Alpine packages
 RUN apk add -q --update --progress --no-cache nodejs npm yarn
@@ -33,5 +33,5 @@ ENV PATH=/home/${USERNAME}/.npm-packages/bin:$PATH
 VOLUME [ "/workspace/node_modules" ]
 RUN mkdir -p /workspace/node_modules && \
     chown ${USERNAME} /workspace/node_modules && \
-    chmod 700  /workspace/node_modules
+    chmod 700 /workspace/node_modules
 USER ${USERNAME}
