@@ -45,6 +45,7 @@
     "settings": {
         // General settings
         "files.eol": "\n",
+        "editor.tabSize": 2,
         // Docker
         "remote.extensionKind": {
             "ms-azuretools.vscode-docker": "workspace"
