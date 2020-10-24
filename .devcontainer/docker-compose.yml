@@ -11,10 +11,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - TZ=
-    cap_add:
-      - SYS_PTRACE
-    security_opt:
-      - seccomp:unconfined
     entrypoint: zsh -c "while sleep 1000; do :; done"
     ports:
       - 3000/tcp
