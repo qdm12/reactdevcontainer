@@ -18,7 +18,7 @@
 ## Features
 
 - Based on [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer):
-    - Alpine 3.11 with minimal custom terminal and packages
+    - Alpine 3.12 with minimal custom terminal and packages
     - Nodejs, npm and yarn downloaded as Alpine packages
     - See more [features](https://github.com/qdm12/basedevcontainer#features)
 - Globally installed: `nodemon`, `create-react-app`, `mocha`, and `jest`
@@ -52,7 +52,7 @@
 1. If you have a *.vscode/settings.json*, eventually move the settings to *.devcontainer/devcontainer.json* in the `"settings"` section as *.vscode/settings.json* take precedence over the settings defined in *.devcontainer/devcontainer.json*.
 1. Open the command palette in Visual Studio Code (CTRL+SHIFT+P) and select `Remote-Containers: Open Folder in Container...` and choose your project directory
 
-**Note that by default it will map the port `3000` to a random port on your host, which you can find with `docker ps`
+**Note that by default it will map the port `3000` to a random port on your host, which you can find with `docker ps`**
 
 ## More
 
@@ -104,7 +104,7 @@
             ```Dockerfile
             FROM qmcgaw/reactdevcontainer
             USER root
-            apk add bind-tools
+            RUN apk add bind-tools
             USER vscode
             ```
 
