@@ -1,7 +1,5 @@
 name: Buildx latest
 on:
-  schedule:
-    - cron: '0 12 * * 6'
   push:
     branches: [master]
     paths-ignore:
