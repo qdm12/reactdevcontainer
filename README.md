@@ -38,7 +38,15 @@
 
 ## Setup for a project
 
-1. Download this repository and put the [.devcontainer](.devcontainer) directory in your project.
+1. Setup your configuration files
+    - With style 💯
+
+        ```sh
+        docker run -it --rm -v "/yourrepopath:/repository" qmcgaw/devtainr:v0.2.0 -dev react -path /repository -name projectname
+        ```
+
+        Or use the [built binary](https://github.com/qdm12/devtainr#binary)
+    - Or manually: download this repository and put the [.devcontainer](.devcontainer) directory in your project.
 1. If you have a *.vscode/settings.json*, eventually move the settings to *.devcontainer/devcontainer.json* in the `"settings"` section as *.vscode/settings.json* take precedence over the settings defined in *.devcontainer/devcontainer.json*.
 1. Open the command palette in Visual Studio Code (CTRL+SHIFT+P) and select `Remote-Containers: Open Folder in Container...` and choose your project directory
 
