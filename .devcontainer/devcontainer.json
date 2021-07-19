@@ -9,7 +9,6 @@
     // "overrideCommand": "",
     "extensions": [
         "dbaeumer.vscode-eslint", // ESLint
-        "ms-vscode.vscode-typescript-tslint-plugin", // Typescript lint
         "esbenp.prettier-vscode", // Prettier code formatter
         "bierner.color-info", // JSX and CSS color information
         "jpoissonnier.vscode-styled-components", // Styled components
