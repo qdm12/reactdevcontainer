@@ -27,4 +27,3 @@ jobs:
             -t qmcgaw/reactdevcontainer:latest \
             --push \
             .
-      - run: curl -X POST https://hooks.microbadger.com/images/qmcgaw/reactdevcontainer/fjf7v_fpeONCXqAv9RmWZ2ormNw= || exit 0
