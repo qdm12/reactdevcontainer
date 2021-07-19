@@ -1,8 +1,6 @@
 # React Dev Container
 
-**Ultimate React development container for Visual Studio Code**
-
-[![reactdevcontainer](https://github.com/qdm12/reactdevcontainer/raw/master/title.svg)](https://hub.docker.com/r/qmcgaw/reactdevcontainer)
+Ultimate React development container for Visual Studio Code
 
 [![Build status](https://github.com/qdm12/reactdevcontainer/workflows/Buildx%20latest/badge.svg)](https://github.com/qdm12/reactdevcontainer/actions?query=workflow%3A%22Buildx+latest%22)
 [![Docker Pulls](https://img.shields.io/docker/pulls/qmcgaw/reactdevcontainer.svg)](https://hub.docker.com/r/qmcgaw/reactdevcontainer)
@@ -16,20 +14,20 @@
 ## Features
 
 - Based on [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer):
-    - Alpine 3.12 with minimal custom terminal and packages
-    - Nodejs, npm and yarn downloaded as Alpine packages
-    - See more [features](https://github.com/qdm12/basedevcontainer#features)
+  - Alpine 3.12 with minimal custom terminal and packages
+  - Nodejs, npm and yarn downloaded as Alpine packages
+  - See more [features](https://github.com/qdm12/basedevcontainer#features)
 - Globally installed: `nodemon`, `create-react-app`, `mocha`, and `jest`
 - Cross platform
-    - Easily bind mount your SSH keys to use with **git**
-    - Manage your host Docker from within the dev container, more details at [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer#features)
+  - Easily bind mount your SSH keys to use with **git**
+  - Manage your host Docker from within the dev container, more details at [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer#features)
 - Extensible with docker-compose.yml
 - 'Minimal' size of **333MB**
 
 ## Requirements
 
 - [Docker](https://www.docker.com/products/docker-desktop) installed and running
-    - If you don't use Linux, share the directories `~/.ssh` and the directory of your project with Docker Desktop
+  - If you don't use Linux, share the directories `~/.ssh` and the directory of your project with Docker Desktop
 - [Docker Compose](https://docs.docker.com/compose/install/) installed
 - [VS code](https://code.visualstudio.com/download) installed
 - [VS code remote containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) installed

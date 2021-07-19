@@ -9,11 +9,11 @@ It works on Linux, Windows and OSX.
 - [VS code](https://code.visualstudio.com/download) installed
 - [VS code remote containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) installed
 - [Docker](https://www.docker.com/products/docker-desktop) installed and running
-    - If you don't use Linux or WSL 2, share your home directory `~/` and the directory of your project with Docker Desktop
+  - If you don't use Linux or WSL 2, share your home directory `~/` and the directory of your project with Docker Desktop
 - [Docker Compose](https://docs.docker.com/compose/install/) installed
 - Ensure your host has the following and that they are accessible by Docker:
-    - `~/.ssh` directory
-    - `~/.gitconfig` file (can be empty)
+  - `~/.ssh` directory
+  - `~/.gitconfig` file (can be empty)
 
 ## Setup
 
