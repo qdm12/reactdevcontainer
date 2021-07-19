@@ -23,6 +23,7 @@ Ultimate React development container for Visual Studio Code
   - Manage your host Docker from within the dev container, more details at [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer#features)
 - Extensible with docker-compose.yml
 - 'Minimal' size of **255MB**
+- Compatible with `amd64`, `arm64`, `armv7`, `armv6`, `s390x` and `ppc64le`
 
 ## Requirements
 
