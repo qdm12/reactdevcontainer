@@ -14,7 +14,7 @@ Ultimate React development container for Visual Studio Code
 ## Features
 
 - Based on [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer):
-  - Alpine 3.12 with minimal custom terminal and packages
+  - Alpine 3.14 with minimal custom terminal and packages
   - Nodejs, npm and yarn downloaded as Alpine packages
   - See more [features](https://github.com/qdm12/basedevcontainer#features)
 - Globally installed: `nodemon`, `create-react-app`, `mocha`, and `jest`
@@ -22,7 +22,7 @@ Ultimate React development container for Visual Studio Code
   - Easily bind mount your SSH keys to use with **git**
   - Manage your host Docker from within the dev container, more details at [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer#features)
 - Extensible with docker-compose.yml
-- 'Minimal' size of **333MB**
+- 'Minimal' size of **255MB**
 
 ## Requirements
 
