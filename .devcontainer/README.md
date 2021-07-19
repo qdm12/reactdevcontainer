@@ -28,12 +28,8 @@ You can make changes to the [Dockerfile](Dockerfile) and then rebuild the image.
 
 ```Dockerfile
 FROM qmcgaw/reactdevcontainer
-USER root
 RUN apk add curl
-USER vscode
 ```
-
-Note that you may need to use `USER root` to build as root, and then change back to `USER vscode`.
 
 To rebuild the image, either:
 
