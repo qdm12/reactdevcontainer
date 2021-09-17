@@ -1,0 +1,71 @@
+name: Debian
+on:
+  push:
+    paths:
+      - .github/workflows/debian.yml
+      - shell/**
+      - .dockerignore
+      - debian.Dockerfile
+  pull_request:
+    paths:
+      - .github/workflows/debian.yml
+      - shell/**
+      - .dockerignore
+      - debian.Dockerfile
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      DOCKER_BUILDKIT: "1"
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build image
+        run: docker build .
+
+  publish:
+    needs: [verify]
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: docker/setup-qemu-action@v1
+      - uses: docker/setup-buildx-action@v1
+
+      - uses: docker/login-action@v1
+        with:
+          username: qmcgaw
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Set variables
+        id: vars
+        run: |
+          BRANCH=${GITHUB_REF#refs/heads/}
+          TAG=${GITHUB_REF#refs/tags/}
+          echo ::set-output name=commit::$(git rev-parse --short HEAD)
+          echo ::set-output name=created::$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          if [ "$TAG" != "$GITHUB_REF" ]; then
+            echo ::set-output name=version::$TAG-debian
+            echo ::set-output name=platforms::linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/arm/v6,linux/s390x,linux/ppc64le
+          elif [ "$BRANCH" = "master" ]; then
+            echo ::set-output name=version::debian
+            echo ::set-output name=platforms::linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/arm/v6,linux/s390x,linux/ppc64le
+          else
+            echo ::set-output name=version::$BRANCH-debian
+            echo ::set-output name=platforms::linux/amd64
+          fi
+
+      - name: Build and push final image
+        uses: docker/build-push-action@v2
+        with:
+          file: debian.Dockerfile
+          platforms: ${{ steps.vars.outputs.platforms }}
+          build-args: |
+            CREATED=${{ steps.vars.outputs.created }}
+            COMMIT=${{ steps.vars.outputs.commit }}
+            VERSION=${{ steps.vars.outputs.version }}
+          tags: |
+            qmcgaw/reactdevcontainer:${{ steps.vars.outputs.version }}
+          push: true

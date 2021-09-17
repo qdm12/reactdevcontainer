@@ -24,8 +24,8 @@ Ultimate React development container for Visual Studio Code
 
 ## Features
 
-- Based on [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer):
-  - Alpine 3.14 with minimal custom terminal and packages
+- Based on [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer)
+  - Minimal custom terminal and packages
   - Nodejs, npm and yarn downloaded as Alpine packages
   - See more [features](https://github.com/qdm12/basedevcontainer#features)
 - Globally installed: `nodemon`, `create-react-app`, `mocha`, and `jest`
@@ -33,7 +33,14 @@ Ultimate React development container for Visual Studio Code
   - Easily bind mount your SSH keys to use with **git**
   - Manage your host Docker from within the dev container, more details at [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer#features)
 - Extensible with docker-compose.yml
-- 'Minimal' size of **255MB**
+- Two versions:
+  1. **Alpine 3.14** based
+      - Image tags  `:latest`, `:alpine` and `:alpine-vx.x.x`
+      - Size of 259MB
+      - ⚠️ does not work on `arm64` due to [vscode-remote-release#4462](https://github.com/microsoft/vscode-remote-release/issues/4462)
+  2. **Debian Buster Slim** based
+      - Image tags `:debian` and `:debian-vx.x.x`
+      - Size of 466MB
 - Compatible with `amd64`, `arm64`, `armv7`, `armv6`, `s390x` and `ppc64le`
 
 ## Requirements
@@ -57,6 +64,7 @@ Ultimate React development container for Visual Studio Code
     - Or manually: download this repository and put the [.devcontainer](.devcontainer) directory in your project.
 1. If you have a *.vscode/settings.json*, eventually move the settings to *.devcontainer/devcontainer.json* in the `"settings"` section as *.vscode/settings.json* take precedence over the settings defined in *.devcontainer/devcontainer.json*.
 1. Open the command palette in Visual Studio Code (CTRL+SHIFT+P) and select `Remote-Containers: Open Folder in Container...` and choose your project directory
+1. If you want to use the Debian based image, you can modify the .devcontainer/Dockerfile in your directory.
 
 **Note that by default it will map the port `3000` to a random port on your host, which you can find with `docker ps`**
 
@@ -67,7 +75,6 @@ See the [.devcontainer/README.md](.devcontainer/README.md) document in your repo
 ## TODOs
 
 - [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer) todos
-- Compatibility with `arm/v8` and `arm/v7`
 
 ## License
 
