@@ -1,4 +1,6 @@
-FROM qmcgaw/basedevcontainer:alpine
+ARG BASEDEV_VERSION=v0.3.0
+
+FROM qmcgaw/basedevcontainer:${BASEDEV_VERSION}-alpine
 ARG CREATED
 ARG COMMIT
 ARG VERSION=local
