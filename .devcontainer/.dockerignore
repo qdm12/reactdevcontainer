@@ -1,5 +1,5 @@
 .dockerignore
 devcontainer.json
 docker-compose.yml
-Dockerfile
+alpine.Dockerfile
 README.md

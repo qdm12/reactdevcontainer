@@ -5,13 +5,13 @@ on:
       - .github/workflows/alpine.yml
       - shell/**
       - .dockerignore
-      - Dockerfile
+      - alpine.Dockerfile
   pull_request:
     paths:
       - .github/workflows/alpine.yml
       - shell/**
       - .dockerignore
-      - Dockerfile
+      - alpine.Dockerfile
 
 jobs:
   verify:
@@ -63,7 +63,7 @@ jobs:
       - name: Build and push final image
         uses: docker/build-push-action@v2
         with:
-          file: Dockerfile
+          file: alpine.Dockerfile
           platforms: ${{ steps.vars.outputs.platforms }}
           build-args: |
             CREATED=${{ steps.vars.outputs.created }}
