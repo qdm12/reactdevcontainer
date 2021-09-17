@@ -41,6 +41,7 @@ Ultimate React development container for Visual Studio Code
   2. **Debian Buster Slim** based
       - Image tags `:debian` and `:debian-vx.x.x`
       - Size of 466MB
+      - Not built for arm V6
 - Compatible with `amd64`, `arm64`, `armv7`, `armv6`, `s390x` and `ppc64le`
 
 ## Requirements

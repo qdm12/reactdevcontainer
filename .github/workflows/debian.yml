@@ -51,7 +51,7 @@ jobs:
             echo ::set-output name=platforms::linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/arm/v6,linux/s390x,linux/ppc64le
           elif [ "$BRANCH" = "master" ]; then
             echo ::set-output name=version::debian
-            echo ::set-output name=platforms::linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/arm/v6,linux/s390x,linux/ppc64le
+            echo ::set-output name=platforms::linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/s390x,linux/ppc64le
           else
             echo ::set-output name=version::$BRANCH-debian
             echo ::set-output name=platforms::linux/amd64
