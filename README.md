@@ -34,13 +34,13 @@ Ultimate React development container for Visual Studio Code
   - Manage your host Docker from within the dev container, more details at [qmcgaw/basedevcontainer](https://github.com/qdm12/basedevcontainer#features)
 - Extensible with docker-compose.yml
 - Two versions:
-  1. **Alpine 3.14** based
+  1. **Alpine 3.15** based
       - Image tags  `:latest`, `:alpine` and `:alpine-vx.x.x`
-      - Size of 259MB
+      - Size of 260MB
       - ⚠️ does not work on `arm64` due to [vscode-remote-release#4462](https://github.com/microsoft/vscode-remote-release/issues/4462)
-  2. **Debian Buster Slim** based
+  2. **Debian Bullseye Slim** based
       - Image tags `:debian` and `:debian-vx.x.x`
-      - Size of 466MB
+      - Size of 500MB
       - Not built for arm V6
 - Compatible with `amd64`, `arm64`, `armv7`, `armv6`, `s390x` and `ppc64le`
 
