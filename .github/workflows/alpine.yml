@@ -36,7 +36,7 @@ jobs:
 
       - uses: docker/login-action@v1
         with:
-          username: qmcgaw
+          username: kbuley
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Set variables
@@ -49,11 +49,11 @@ jobs:
           if [ "$TAG" != "$GITHUB_REF" ]; then
             echo ::set-output name=version::$TAG
             echo ::set-output name=alpine_version::$TAG-alpine
-            echo ::set-output name=platforms::linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/arm/v6,linux/s390x,linux/ppc64le
+            echo ::set-output name=platforms::linux/amd64,linux/arm64
           elif [ "$BRANCH" = "master" ]; then
             echo ::set-output name=version::latest
             echo ::set-output name=alpine_version::alpine
-            echo ::set-output name=platforms::linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/arm/v6,linux/s390x,linux/ppc64le
+            echo ::set-output name=platforms::linux/amd64,linux/arm64
           else
             echo ::set-output name=version::$BRANCH
             echo ::set-output name=alpine_version::$BRANCH-alpine
@@ -70,6 +70,6 @@ jobs:
             COMMIT=${{ steps.vars.outputs.commit }}
             VERSION=${{ steps.vars.outputs.version }}
           tags: |
-            qmcgaw/reactdevcontainer:${{ steps.vars.outputs.version }}
-            qmcgaw/reactdevcontainer:${{ steps.vars.outputs.alpine_version }}
+            kbuley/reactdevcontainer:${{ steps.vars.outputs.version }}
+            kbuley/reactdevcontainer:${{ steps.vars.outputs.alpine_version }}
           push: true
